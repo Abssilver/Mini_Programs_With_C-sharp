@@ -33,6 +33,12 @@
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.noteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblCount = new System.Windows.Forms.Label();
@@ -40,24 +46,24 @@
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbGeneratorNoRepetition = new System.Windows.Forms.CheckBox();
+            this.btnGeneratorCopy = new System.Windows.Forms.Button();
+            this.btnGeneratorClear = new System.Windows.Forms.Button();
+            this.tbRandom = new System.Windows.Forms.TextBox();
             this.lblRandom = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.tbRandom = new System.Windows.Forms.TextBox();
-            this.btnGeneratorClear = new System.Windows.Forms.Button();
-            this.btnGeneratorCopy = new System.Windows.Forms.Button();
-            this.cbGeneratorNoRepetition = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
-            this.noteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.btnGeneratePassword = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nudPassLength = new System.Windows.Forms.NumericUpDown();
+            this.clbPasswordCases = new System.Windows.Forms.CheckedListBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -65,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPassLength)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -110,11 +118,65 @@
             this.tsmiAbout.Text = "About";
             this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
             // 
+            // noteToolStripMenuItem
+            // 
+            this.noteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDate,
+            this.tsmiTime,
+            this.toolStripMenuItem1,
+            this.tsmiSave,
+            this.tsmiLoad});
+            this.noteToolStripMenuItem.Name = "noteToolStripMenuItem";
+            this.noteToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
+            this.noteToolStripMenuItem.Text = "Note";
+            // 
+            // tsmiDate
+            // 
+            this.tsmiDate.Name = "tsmiDate";
+            this.tsmiDate.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.tsmiDate.Size = new System.Drawing.Size(217, 26);
+            this.tsmiDate.Text = "Date";
+            this.tsmiDate.Click += new System.EventHandler(this.tsmiDate_Click);
+            // 
+            // tsmiTime
+            // 
+            this.tsmiTime.Name = "tsmiTime";
+            this.tsmiTime.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+            this.tsmiTime.Size = new System.Drawing.Size(217, 26);
+            this.tsmiTime.Text = "Time";
+            this.tsmiTime.Click += new System.EventHandler(this.tsmiTime_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 6);
+            // 
+            // tsmiSave
+            // 
+            this.tsmiSave.Name = "tsmiSave";
+            this.tsmiSave.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.tsmiSave.Size = new System.Drawing.Size(217, 26);
+            this.tsmiSave.Text = "Save";
+            this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
+            // 
+            // tsmiLoad
+            // 
+            this.tsmiLoad.Name = "tsmiLoad";
+            this.tsmiLoad.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.L)));
+            this.tsmiLoad.Size = new System.Drawing.Size(217, 26);
+            this.tsmiLoad.Text = "Load";
+            this.tsmiLoad.Click += new System.EventHandler(this.tsmiLoad_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
@@ -131,7 +193,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(369, 391);
+            this.tabPage1.Size = new System.Drawing.Size(369, 393);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Counter";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -194,10 +256,49 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(369, 391);
+            this.tabPage2.Size = new System.Drawing.Size(369, 393);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Generator";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cbGeneratorNoRepetition
+            // 
+            this.cbGeneratorNoRepetition.AutoSize = true;
+            this.cbGeneratorNoRepetition.Location = new System.Drawing.Point(24, 218);
+            this.cbGeneratorNoRepetition.Name = "cbGeneratorNoRepetition";
+            this.cbGeneratorNoRepetition.Size = new System.Drawing.Size(111, 21);
+            this.cbGeneratorNoRepetition.TabIndex = 9;
+            this.cbGeneratorNoRepetition.Text = "No repetition";
+            this.cbGeneratorNoRepetition.UseVisualStyleBackColor = true;
+            // 
+            // btnGeneratorCopy
+            // 
+            this.btnGeneratorCopy.Location = new System.Drawing.Point(24, 134);
+            this.btnGeneratorCopy.Name = "btnGeneratorCopy";
+            this.btnGeneratorCopy.Size = new System.Drawing.Size(94, 23);
+            this.btnGeneratorCopy.TabIndex = 8;
+            this.btnGeneratorCopy.Text = "Copy all";
+            this.btnGeneratorCopy.UseVisualStyleBackColor = true;
+            this.btnGeneratorCopy.Click += new System.EventHandler(this.btnGeneratorCopy_Click);
+            // 
+            // btnGeneratorClear
+            // 
+            this.btnGeneratorClear.Location = new System.Drawing.Point(24, 174);
+            this.btnGeneratorClear.Name = "btnGeneratorClear";
+            this.btnGeneratorClear.Size = new System.Drawing.Size(94, 23);
+            this.btnGeneratorClear.TabIndex = 7;
+            this.btnGeneratorClear.Text = "Clear";
+            this.btnGeneratorClear.UseVisualStyleBackColor = true;
+            this.btnGeneratorClear.Click += new System.EventHandler(this.btnGeneratorClear_Click);
+            // 
+            // tbRandom
+            // 
+            this.tbRandom.Location = new System.Drawing.Point(184, 134);
+            this.tbRandom.Multiline = true;
+            this.tbRandom.Name = "tbRandom";
+            this.tbRandom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbRandom.Size = new System.Drawing.Size(140, 208);
+            this.tbRandom.TabIndex = 6;
             // 
             // lblRandom
             // 
@@ -224,7 +325,6 @@
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(93, 22);
             this.numericUpDown2.TabIndex = 4;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // numericUpDown1
             // 
@@ -271,45 +371,6 @@
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tbRandom
-            // 
-            this.tbRandom.Location = new System.Drawing.Point(184, 134);
-            this.tbRandom.Multiline = true;
-            this.tbRandom.Name = "tbRandom";
-            this.tbRandom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbRandom.Size = new System.Drawing.Size(140, 208);
-            this.tbRandom.TabIndex = 6;
-            // 
-            // btnGeneratorClear
-            // 
-            this.btnGeneratorClear.Location = new System.Drawing.Point(24, 174);
-            this.btnGeneratorClear.Name = "btnGeneratorClear";
-            this.btnGeneratorClear.Size = new System.Drawing.Size(94, 23);
-            this.btnGeneratorClear.TabIndex = 7;
-            this.btnGeneratorClear.Text = "Clear";
-            this.btnGeneratorClear.UseVisualStyleBackColor = true;
-            this.btnGeneratorClear.Click += new System.EventHandler(this.btnGeneratorClear_Click);
-            // 
-            // btnGeneratorCopy
-            // 
-            this.btnGeneratorCopy.Location = new System.Drawing.Point(24, 134);
-            this.btnGeneratorCopy.Name = "btnGeneratorCopy";
-            this.btnGeneratorCopy.Size = new System.Drawing.Size(94, 23);
-            this.btnGeneratorCopy.TabIndex = 8;
-            this.btnGeneratorCopy.Text = "Copy all";
-            this.btnGeneratorCopy.UseVisualStyleBackColor = true;
-            this.btnGeneratorCopy.Click += new System.EventHandler(this.btnGeneratorCopy_Click);
-            // 
-            // cbGeneratorNoRepetition
-            // 
-            this.cbGeneratorNoRepetition.AutoSize = true;
-            this.cbGeneratorNoRepetition.Location = new System.Drawing.Point(24, 218);
-            this.cbGeneratorNoRepetition.Name = "cbGeneratorNoRepetition";
-            this.cbGeneratorNoRepetition.Size = new System.Drawing.Size(111, 21);
-            this.cbGeneratorNoRepetition.TabIndex = 9;
-            this.cbGeneratorNoRepetition.Text = "No repetition";
-            this.cbGeneratorNoRepetition.UseVisualStyleBackColor = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.rtbNote);
@@ -329,58 +390,82 @@
             this.rtbNote.TabIndex = 0;
             this.rtbNote.Text = "";
             // 
-            // noteToolStripMenuItem
+            // tabPage4
             // 
-            this.noteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiDate,
-            this.tsmiTime,
-            this.toolStripMenuItem1,
-            this.tsmiSave,
-            this.tsmiLoad});
-            this.noteToolStripMenuItem.Name = "noteToolStripMenuItem";
-            this.noteToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
-            this.noteToolStripMenuItem.Text = "Note";
+            this.tabPage4.Controls.Add(this.tbPassword);
+            this.tabPage4.Controls.Add(this.btnGeneratePassword);
+            this.tabPage4.Controls.Add(this.label3);
+            this.tabPage4.Controls.Add(this.nudPassLength);
+            this.tabPage4.Controls.Add(this.clbPasswordCases);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(369, 393);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Password";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tsmiDate
+            // tbPassword
             // 
-            this.tsmiDate.Name = "tsmiDate";
-            this.tsmiDate.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.D)));
-            this.tsmiDate.Size = new System.Drawing.Size(224, 26);
-            this.tsmiDate.Text = "Date";
-            this.tsmiDate.Click += new System.EventHandler(this.tsmiDate_Click);
+            this.tbPassword.Location = new System.Drawing.Point(20, 229);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(317, 22);
+            this.tbPassword.TabIndex = 4;
             // 
-            // tsmiTime
+            // btnGeneratePassword
             // 
-            this.tsmiTime.Name = "tsmiTime";
-            this.tsmiTime.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.T)));
-            this.tsmiTime.Size = new System.Drawing.Size(224, 26);
-            this.tsmiTime.Text = "Time";
-            this.tsmiTime.Click += new System.EventHandler(this.tsmiTime_Click);
+            this.btnGeneratePassword.Location = new System.Drawing.Point(60, 184);
+            this.btnGeneratePassword.Name = "btnGeneratePassword";
+            this.btnGeneratePassword.Size = new System.Drawing.Size(146, 23);
+            this.btnGeneratePassword.TabIndex = 3;
+            this.btnGeneratePassword.Text = "Generate Password";
+            this.btnGeneratePassword.UseVisualStyleBackColor = true;
+            this.btnGeneratePassword.Click += new System.EventHandler(this.btnGeneratePassword_Click);
             // 
-            // toolStripMenuItem1
+            // label3
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 147);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Password length";
             // 
-            // tsmiSave
+            // nudPassLength
             // 
-            this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.tsmiSave.Size = new System.Drawing.Size(224, 26);
-            this.tsmiSave.Text = "Save";
-            this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
+            this.nudPassLength.Location = new System.Drawing.Point(135, 147);
+            this.nudPassLength.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudPassLength.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPassLength.Name = "nudPassLength";
+            this.nudPassLength.Size = new System.Drawing.Size(71, 22);
+            this.nudPassLength.TabIndex = 1;
+            this.nudPassLength.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             // 
-            // tsmiLoad
+            // clbPasswordCases
             // 
-            this.tsmiLoad.Name = "tsmiLoad";
-            this.tsmiLoad.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.L)));
-            this.tsmiLoad.Size = new System.Drawing.Size(224, 26);
-            this.tsmiLoad.Text = "Load";
-            this.tsmiLoad.Click += new System.EventHandler(this.tsmiLoad_Click);
+            this.clbPasswordCases.CheckOnClick = true;
+            this.clbPasswordCases.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clbPasswordCases.FormattingEnabled = true;
+            this.clbPasswordCases.Items.AddRange(new object[] {
+            "Numbers",
+            "Uppercase letters",
+            "Lowercase letters",
+            "Special symbols"});
+            this.clbPasswordCases.Location = new System.Drawing.Point(20, 37);
+            this.clbPasswordCases.Name = "clbPasswordCases";
+            this.clbPasswordCases.Size = new System.Drawing.Size(210, 92);
+            this.clbPasswordCases.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -403,6 +488,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPassLength)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,6 +528,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSave;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoad;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nudPassLength;
+        private System.Windows.Forms.CheckedListBox clbPasswordCases;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.Button btnGeneratePassword;
     }
 }
 

@@ -14,6 +14,9 @@ namespace Mini_Programs_With_C_sharp
     {
         int count = 0;
         Random rnd;
+        char[] specChars = new char[] 
+        { '!','"','#','$','%','&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\',
+            ']', '^', '_','`', '{', '|', '}', '~'};
         public MainForm()
         {
             InitializeComponent();
@@ -44,11 +47,6 @@ namespace Mini_Programs_With_C_sharp
         {
             count = 0;
             lblCount.Text = count.ToString();
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -113,7 +111,37 @@ namespace Mini_Programs_With_C_sharp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadNotepad();
+            // LoadNotepad();
+            clbPasswordCases.SetItemChecked(0, true);
+            clbPasswordCases.SetItemChecked(2, true);
+        }
+
+        private void btnGeneratePassword_Click(object sender, EventArgs e)
+        {
+            if (clbPasswordCases.CheckedItems.Count == 0) return;
+            string password = "";
+            for (int i = 0; i < nudPassLength.Value; i++)
+            {
+                int checkedIndex = rnd.Next(0, clbPasswordCases.CheckedItems.Count);
+                string option = clbPasswordCases.CheckedItems[checkedIndex].ToString();
+                switch (option)
+                {
+                    case "Numbers":
+                        password += rnd.Next(10).ToString();
+                        break;
+                    case "Uppercase letters":
+                        password += Convert.ToChar(rnd.Next(65, 91));
+                        break;
+                    case "Lowercase letters":
+                        password += Convert.ToChar(rnd.Next(97, 123));
+                        break;
+                    case "Special symbols":
+                        password += specChars[rnd.Next(0, specChars.Length)];
+                        break;
+                }
+                tbPassword.Text = password;
+                Clipboard.SetText(password);
+            }
         }
     }
 }
