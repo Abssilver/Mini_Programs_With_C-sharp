@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini_Programs_With_C-sharp", "Mini_Programms_With_C-sharp\Mini_Programs_With_C-sharp.csproj", "{767664B5-84CB-4E15-8BCE-0571A750B458}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini_Programs_With_C-sharp", "Mini_Programs_With_C-sharp\Mini_Programs_With_C-sharp.csproj", "{767664B5-84CB-4E15-8BCE-0571A750B458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7BCDEFA6-5D5E-45F6-9579-698C1E29C725}
+		SolutionGuid = {A84B123E-464E-45C7-BBB1-66D4D0F21ED5}
 	EndGlobalSection
 EndGlobal

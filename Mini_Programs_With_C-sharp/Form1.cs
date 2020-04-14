@@ -17,12 +17,54 @@ namespace Mini_Programs_With_C_sharp
         char[] specChars = new char[] 
         { '!','"','#','$','%','&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\',
             ']', '^', '_','`', '{', '|', '}', '~'};
+        Dictionary<string, double> metricDictionary = new Dictionary<string, double>();
+        string [,] metricsData = new string [,] { 
+            { "length", "mm", "1" },
+            { "length", "cm", "10" },
+            { "length", "dm", "100" },
+            { "length", "m", "1000" },
+            { "length", "km", "1000000" },
+            { "length", "mile", "1609344" },
+            { "weight", "mg", "1" },
+            { "weight", "g", "1000" },
+            { "weight", "kg", "1000000" },
+            { "weight", "ton", "1000000000" },
+            { "weight", "lb", "453592" },
+            { "weight", "oz", "28349,5" },
+        };
         public MainForm()
         {
             InitializeComponent();
             rnd = new Random();
+            InitializeMetricsDictionary("length");
+            InitializeConverterCheckBoxes();
         }
-
+        private void InitializeMetricsDictionary(string metricsName)
+        {
+            metricDictionary.Clear();
+            int numberOfSubarrays = metricsData.Length / (metricsData.GetUpperBound(1) + 1);
+            for (int i = 0; i < numberOfSubarrays; i++)
+            {
+                if (metricsData[i,0]==metricsName)
+                {
+                    metricDictionary.Add(metricsData[i, 1], double.Parse(metricsData[i, 2]));
+                }
+            }
+            //int rows = metricsData.GetUpperBound(0)+1;
+            //int columns = metricsData.GetUpperBound(1) + 1;
+        }
+        private void InitializeConverterCheckBoxes()
+        {
+            cbConverterFrom.Items.Clear();
+            cbConverterTo.Items.Clear();
+            foreach (var item in metricDictionary)
+            {
+                cbConverterFrom.Items.Add(item.Key);
+                cbConverterTo.Items.Add(item.Key);
+            }
+            cbConverterFrom.Text = cbConverterFrom.Items[0].ToString();
+            cbConverterTo.Text = cbConverterTo.Items[0].ToString();
+        }
         private void tsmiExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -141,6 +183,43 @@ namespace Mini_Programs_With_C_sharp
                 }
                 tbPassword.Text = password;
                 Clipboard.SetText(password);
+            }
+        }
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            double metricFrom = metricDictionary[cbConverterFrom.Text];
+            double metricTo = metricDictionary[cbConverterTo.Text];
+            try
+            {
+                double valueToConvert = Convert.ToDouble(tbConverterFrom.Text);
+                tbConverterTo.Text = (valueToConvert * metricFrom / metricTo).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid number to convert", "Error");
+            }
+        }
+
+        private void btnSwap_Click(object sender, EventArgs e)
+        {
+            string temp = cbConverterFrom.Text;
+            cbConverterFrom.Text = cbConverterTo.Text;
+            cbConverterTo.Text = temp;
+        }
+
+        private void cbMetric_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbMetric.Text)
+            {
+                case "length":
+                    InitializeMetricsDictionary("length");
+                    InitializeConverterCheckBoxes();
+                    break;
+                case "weight":
+                    InitializeMetricsDictionary("weight");
+                    InitializeConverterCheckBoxes();
+                    break;
             }
         }
     }

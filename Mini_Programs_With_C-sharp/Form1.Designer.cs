@@ -64,6 +64,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nudPassLength = new System.Windows.Forms.NumericUpDown();
             this.clbPasswordCases = new System.Windows.Forms.CheckedListBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.cbMetric = new System.Windows.Forms.ComboBox();
+            this.btnSwap = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbConverterTo = new System.Windows.Forms.TextBox();
+            this.tbConverterFrom = new System.Windows.Forms.TextBox();
+            this.btnConvert = new System.Windows.Forms.Button();
+            this.cbConverterTo = new System.Windows.Forms.ComboBox();
+            this.cbConverterFrom = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -73,6 +83,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPassLength)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -177,6 +188,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
@@ -467,6 +479,122 @@
             this.clbPasswordCases.Size = new System.Drawing.Size(210, 92);
             this.clbPasswordCases.TabIndex = 0;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.cbMetric);
+            this.tabPage5.Controls.Add(this.btnSwap);
+            this.tabPage5.Controls.Add(this.label5);
+            this.tabPage5.Controls.Add(this.label4);
+            this.tabPage5.Controls.Add(this.tbConverterTo);
+            this.tabPage5.Controls.Add(this.tbConverterFrom);
+            this.tabPage5.Controls.Add(this.btnConvert);
+            this.tabPage5.Controls.Add(this.cbConverterTo);
+            this.tabPage5.Controls.Add(this.cbConverterFrom);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(369, 393);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Converter";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // cbMetric
+            // 
+            this.cbMetric.FormattingEnabled = true;
+            this.cbMetric.Items.AddRange(new object[] {
+            "length",
+            "weight"});
+            this.cbMetric.Location = new System.Drawing.Point(52, 8);
+            this.cbMetric.Name = "cbMetric";
+            this.cbMetric.Size = new System.Drawing.Size(76, 24);
+            this.cbMetric.TabIndex = 8;
+            this.cbMetric.Text = "length";
+            this.cbMetric.SelectedIndexChanged += new System.EventHandler(this.cbMetric_SelectedIndexChanged);
+            // 
+            // btnSwap
+            // 
+            this.btnSwap.Location = new System.Drawing.Point(52, 69);
+            this.btnSwap.Name = "btnSwap";
+            this.btnSwap.Size = new System.Drawing.Size(75, 29);
+            this.btnSwap.TabIndex = 7;
+            this.btnSwap.Text = "\t↕";
+            this.btnSwap.UseVisualStyleBackColor = true;
+            this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 17);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "To";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "From";
+            // 
+            // tbConverterTo
+            // 
+            this.tbConverterTo.Location = new System.Drawing.Point(149, 104);
+            this.tbConverterTo.Name = "tbConverterTo";
+            this.tbConverterTo.ReadOnly = true;
+            this.tbConverterTo.Size = new System.Drawing.Size(100, 22);
+            this.tbConverterTo.TabIndex = 4;
+            // 
+            // tbConverterFrom
+            // 
+            this.tbConverterFrom.Location = new System.Drawing.Point(149, 40);
+            this.tbConverterFrom.Name = "tbConverterFrom";
+            this.tbConverterFrom.Size = new System.Drawing.Size(100, 22);
+            this.tbConverterFrom.TabIndex = 3;
+            // 
+            // btnConvert
+            // 
+            this.btnConvert.Location = new System.Drawing.Point(268, 40);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(75, 23);
+            this.btnConvert.TabIndex = 2;
+            this.btnConvert.Text = "Convert";
+            this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
+            // 
+            // cbConverterTo
+            // 
+            this.cbConverterTo.FormattingEnabled = true;
+            this.cbConverterTo.Items.AddRange(new object[] {
+            "mm",
+            "cm",
+            "dm",
+            "m",
+            "km",
+            "mile"});
+            this.cbConverterTo.Location = new System.Drawing.Point(51, 104);
+            this.cbConverterTo.Name = "cbConverterTo";
+            this.cbConverterTo.Size = new System.Drawing.Size(76, 24);
+            this.cbConverterTo.TabIndex = 1;
+            this.cbConverterTo.Text = "m";
+            // 
+            // cbConverterFrom
+            // 
+            this.cbConverterFrom.FormattingEnabled = true;
+            this.cbConverterFrom.Items.AddRange(new object[] {
+            "mm",
+            "cm",
+            "dm",
+            "m",
+            "km",
+            "mile"});
+            this.cbConverterFrom.Location = new System.Drawing.Point(52, 39);
+            this.cbConverterFrom.Name = "cbConverterFrom";
+            this.cbConverterFrom.Size = new System.Drawing.Size(76, 24);
+            this.cbConverterFrom.TabIndex = 0;
+            this.cbConverterFrom.Text = "mm";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -491,6 +619,8 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPassLength)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,6 +664,16 @@
         private System.Windows.Forms.CheckedListBox clbPasswordCases;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button btnGeneratePassword;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox tbConverterTo;
+        private System.Windows.Forms.TextBox tbConverterFrom;
+        private System.Windows.Forms.Button btnConvert;
+        private System.Windows.Forms.ComboBox cbConverterTo;
+        private System.Windows.Forms.ComboBox cbConverterFrom;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSwap;
+        private System.Windows.Forms.ComboBox cbMetric;
     }
 }
 
